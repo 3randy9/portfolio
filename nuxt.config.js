@@ -23,7 +23,8 @@ module.exports = {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: 'randy39 Portfolio' }
 		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+		link: [{ href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans:400,700', rel: 'stylesheet' }]
 	},
 
 	/*
@@ -79,7 +80,7 @@ module.exports = {
 	manifest: {
 		// manifestの設定
 		lang: 'ja',
-		name: 'randy39',
+		name: 'randy39 Portfolio',
 		short_name: 'randy39',
 		description: 'randy39 Portfolio',
 		background_color: '#000000',
