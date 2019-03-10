@@ -1,10 +1,7 @@
 <template lang="pug">
 	section
 		div
-			nuxt-link(to="/") home
-			nuxt-link(to="/about/") about
-			nuxt-link(to="/contact/") contact
-			p This home
+			h1 This home
 </template>
 
 <script>
@@ -22,6 +19,7 @@ export default {
 section {
   background-image: url('~assets/images/main_visual.jpg');
   background-size: cover;
+	background-position: center center;
   div {
     display: flex;
     justify-content: center;

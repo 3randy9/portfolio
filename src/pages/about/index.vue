@@ -1,9 +1,7 @@
 <template lang="pug">
-	section.container
-		nuxt-link(to="/") home
-		nuxt-link(to="/about/") about
-		nuxt-link(to="/contact/") contact
-		p This about
+	section
+		.container
+			h1 This about
 </template>
 
 <script>
