@@ -1,7 +1,9 @@
-<template lang="pug">
-	section
-		div
-			h1 This home
+<template>
+	<section>
+		<div>
+			<h1>This home</h1>
+		</div>
+	</section>
 </template>
 
 <script>

@@ -45,7 +45,4 @@ div {
   line-height: 1.65;
 	font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
 }
-main {
-  // padding: 100px 0;
-}
 </style>

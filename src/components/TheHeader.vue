@@ -20,24 +20,21 @@
         :class="{ 'hidden': !drawer }"
       >
         <ul class="text-sm lg:flex-grow">
-          <li>
+          <li @click="drawer = !drawer">
             <nuxt-link
               to="/"
-              href="/"
               class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white mr-4"
             >Home</nuxt-link>
           </li>
-          <li>
+          <li @click="drawer = !drawer">
             <nuxt-link
-              to="/about/"
-              href="/about/"
+              to="/about"
               class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white mr-4"
             >About</nuxt-link>
           </li>
-          <li>
+          <li @click="drawer = !drawer">
             <nuxt-link
-              to="/contact/"
-              href="/contact/"
+              to="/contact"
               class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white"
             >Contact</nuxt-link>
           </li>
@@ -68,9 +65,9 @@ header {
   top: 0;
   width: 100vw;
   .logo {
-		color: #fff;
+    color: #fff;
     letter-spacing: 1px;
-		text-decoration: none;
+    text-decoration: none;
   }
   nav {
     text-align: right;
@@ -112,13 +109,13 @@ header {
       transform: translate(-50%, -50%);
       li {
         display: block;
-        margin: 0 auto 20px;
+        margin: 0 auto;
 
         border-bottom: 1px solid #dae1e7;
         text-align: center;
         a {
           margin: 0;
-          padding-bottom: 20px;
+          padding: 20px 0;
           color: #fff;
           text-decoration: none;
         }
