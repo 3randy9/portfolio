@@ -110,7 +110,6 @@ header {
       li {
         display: block;
         margin: 0 auto;
-
         border-bottom: 1px solid #dae1e7;
         text-align: center;
         a {
