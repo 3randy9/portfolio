@@ -7,7 +7,8 @@
       <div class="block">
         <button
           class="flex items-center px-3 py-2 border rounded text-grey-dark border-grey-dark hover:text-white hover:border-white"
-          @click="drawer = !drawer" tabindex="0"
+          @click="drawer = !drawer"
+          tabindex="0"
         >
           <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
@@ -22,21 +23,19 @@
         >
           <ul class="text-sm lg:flex-grow modal-container">
             <li @click="drawer = !drawer">
-              <nuxt-link
-                to="/"
-                class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white mr-4"
-              >Home</nuxt-link>
+              <nuxt-link to="/" class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4">Home</nuxt-link>
             </li>
             <li @click="drawer = !drawer">
               <nuxt-link
                 to="/about"
-                class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white mr-4"
+                class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4"
               >About</nuxt-link>
+              <div class="borderAnime"></div>
             </li>
             <li @click="drawer = !drawer">
               <nuxt-link
                 to="/contact"
-                class="block mt-4 lg:inline-block lg:mt-0 text-grey-dark hover:text-white"
+                class="block mt-4 lg:mt-0 text-grey-dark hover:text-white"
               >Contact</nuxt-link>
             </li>
           </ul>
@@ -82,60 +81,94 @@ header {
     }
   }
 
-    .hd-modal {
-      position: fixed;
-      z-index: 9998;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      transition: opacity 0.3s ease;
+  .hd-modal {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
+  }
+  .hd-closeModal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    svg {
+      width: 38px;
+      height: 38px;
+      fill: #fff;
     }
-    .hd-closeModal {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      svg {
-        width: 38px;
-        height: 38px;
-        fill: #fff;
+  }
+  .modal-container {
+    transition: all 0.3s ease;
+  }
+  .modal-enter {
+    opacity: 0;
+  }
+  .modal-leave-active {
+    opacity: 0;
+  }
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    transform: scale(1);
+    transform: translate(-50%, 50%);
+  }
+  ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    li {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      border-bottom: 1px solid #8795A1;
+      text-align: center;
+      a {
+        margin: 0;
+        padding: 20px 0;
+        color: #fff;
+        text-decoration: none;
+      }
+      .borderAnime {
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        width: 0;
+        border-bottom: 1px solid #F1F5F8;
+        transition: width 0.5s ease-in-out, transform 1s ease-in-out;
+      }
+      &:hover .borderAnime {
+        transform: translate(-50%, 0);
+        width: 100%;
+        transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
       }
     }
-    .modal-container {
-      transition: all 0.3s ease;
-    }
-    .modal-enter {
-      opacity: 0;
-    }
-    .modal-leave-active {
-      opacity: 0;
-    }
-    .modal-enter .modal-container,
-    .modal-leave-active .modal-container {
-      transform: scale(1);
-			transform:translate(-50%,50%);
-    }
-    ul {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 50vw;
-      margin: auto;
-      transform: translate(-50%, -50%);
-      li {
-        display: block;
-        margin: 0 auto;
-        border-bottom: 1px solid #dae1e7;
-        text-align: center;
-        a {
-          margin: 0;
-          padding: 20px 0;
-          color: #fff;
-          text-decoration: none;
-        }
-      }
-    }
-
+  }
 }
+// #second > .border:nth-of-type(1) {
+//   top: 0;
+//   left: 50%;
+//   width: 0;
+//   border-top: 1px solid #dae1e7;
+//   transition: width 0.5s ease-in-out, transform 1s ease-in-out;
+// }
+
+// #second > .border:nth-of-type(2) {
+//   bottom: 0;
+//   left: 50%;
+//   width: 0;
+//   border-bottom: 1px solid #dae1e7;
+//   transition: width 0.5s ease-in-out, transform 1s ease-in-out;
+// }
+
+// #second:hover .border {
+//   transform: translate(-50%, 0);
+//   width: 100%;
+//   transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
+// }
 </style>

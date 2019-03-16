@@ -69,6 +69,7 @@ module.exports = {
 			font: () => '[path][name].[ext]',
 			video: () => '[path][name].[ext]'
 		},
+		// hardSource: true,
 		/*
     ** You can extend webpack config here
     */
