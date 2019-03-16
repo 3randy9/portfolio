@@ -24,7 +24,13 @@ module.exports = {
 			{ hid: 'description', name: 'description', content: 'randy39 Portfolio' }
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-		link: [{ href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans:400,700', rel: 'stylesheet' }]
+		link: [
+			{
+				href:
+					'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans:400,700',
+				rel: 'stylesheet'
+			}
+		]
 	},
 
 	/*
@@ -69,7 +75,6 @@ module.exports = {
 			font: () => '[path][name].[ext]',
 			video: () => '[path][name].[ext]'
 		},
-		// hardSource: true,
 		/*
     ** You can extend webpack config here
     */
