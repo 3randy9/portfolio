@@ -24,6 +24,7 @@
           <ul class="text-sm lg:flex-grow modal-container">
             <li @click="drawer = !drawer">
               <nuxt-link to="/" class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4">Home</nuxt-link>
+              <div class="borderAnime"></div>
             </li>
             <li @click="drawer = !drawer">
               <nuxt-link
@@ -37,6 +38,7 @@
                 to="/contact"
                 class="block mt-4 lg:mt-0 text-grey-dark hover:text-white"
               >Contact</nuxt-link>
+              <div class="borderAnime"></div>
             </li>
           </ul>
           <button class="hd-closeModal p-6" @click="drawer = !drawer">
@@ -126,7 +128,7 @@ header {
       position: relative;
       display: block;
       margin: 0 auto;
-      border-bottom: 1px solid #8795A1;
+      border-bottom: 1px solid #8795a1;
       text-align: center;
       a {
         margin: 0;
@@ -139,7 +141,7 @@ header {
         bottom: -1px;
         left: 50%;
         width: 0;
-        border-bottom: 1px solid #F1F5F8;
+        border-bottom: 1px solid #f1f5f8;
         transition: width 0.5s ease-in-out, transform 1s ease-in-out;
       }
       &:hover .borderAnime {
