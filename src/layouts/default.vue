@@ -38,11 +38,20 @@ html {
 }
 div {
   position: relative;
-	color: #1a1a1a;
+  color: #1a1a1a;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.4px;
   line-height: 1.65;
-	font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+}
+// ruoter transition
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }
 </style>

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  components: {}
+	components: {},
 }
 </script>
 
@@ -19,7 +19,7 @@ export default {
 }
 */
 section {
-  background-image: url('~assets/images/main_visual.jpg');
+  background-image: url('~assets/images/main_visual-min.jpg');
   background-size: cover;
   background-position: center center;
   div {

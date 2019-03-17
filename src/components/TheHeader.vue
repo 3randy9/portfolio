@@ -67,6 +67,7 @@ header {
   position: absolute;
   top: 0;
   width: 100vw;
+  z-index: 10;
   .logo {
     color: #fff;
     letter-spacing: 1px;
@@ -152,25 +153,4 @@ header {
     }
   }
 }
-// #second > .border:nth-of-type(1) {
-//   top: 0;
-//   left: 50%;
-//   width: 0;
-//   border-top: 1px solid #dae1e7;
-//   transition: width 0.5s ease-in-out, transform 1s ease-in-out;
-// }
-
-// #second > .border:nth-of-type(2) {
-//   bottom: 0;
-//   left: 50%;
-//   width: 0;
-//   border-bottom: 1px solid #dae1e7;
-//   transition: width 0.5s ease-in-out, transform 1s ease-in-out;
-// }
-
-// #second:hover .border {
-//   transform: translate(-50%, 0);
-//   width: 100%;
-//   transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
-// }
 </style>
