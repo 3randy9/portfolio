@@ -1,9 +1,11 @@
-<template lang="pug">
-	div
-		the-header
-		main
-			nuxt
-		the-footer
+<template>
+	<div>
+		<the-header/>
+		<main>
+			<nuxt/>
+		</main>
+		<the-footer/>
+	</div>
 </template>
 
 <script>
@@ -20,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 html {
+	font-size: 62.5%;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;

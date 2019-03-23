@@ -24,21 +24,18 @@
           <ul class="text-sm lg:flex-grow modal-container">
             <li @click="drawer = !drawer">
               <nuxt-link to="/" class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4">Home</nuxt-link>
-              <div class="borderAnime"></div>
             </li>
             <li @click="drawer = !drawer">
               <nuxt-link
                 to="/about"
                 class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4"
               >About</nuxt-link>
-              <div class="borderAnime"></div>
             </li>
             <li @click="drawer = !drawer">
               <nuxt-link
                 to="/contact"
                 class="block mt-4 lg:mt-0 text-grey-dark hover:text-white"
               >Contact</nuxt-link>
-              <div class="borderAnime"></div>
             </li>
           </ul>
           <button class="hd-closeModal p-6" @click="drawer = !drawer">
@@ -123,6 +120,7 @@ header {
     top: 50%;
     left: 50%;
     width: 50vw;
+    max-width: 400px;
     margin: auto;
     transform: translate(-50%, -50%);
     li {
@@ -136,19 +134,6 @@ header {
         padding: 20px 0;
         color: #fff;
         text-decoration: none;
-      }
-      .borderAnime {
-        position: absolute;
-        bottom: -1px;
-        left: 50%;
-        width: 0;
-        border-bottom: 1px solid #f1f5f8;
-        transition: width 0.5s ease-in-out, transform 1s ease-in-out;
-      }
-      &:hover .borderAnime {
-        transform: translate(-50%, 0);
-        width: 100%;
-        transition: width 0.8s ease-in-out, transform 0.3s ease-in-out;
       }
     }
   }
