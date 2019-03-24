@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-black text-white text-sm p-6">
+  <footer class="text-grey-darkest text-sm p-6">
     <ul>
       <li>
         <a href="https://twitter.com/randy_39" target="_blank" rel="noopener noreferrer">
@@ -57,7 +57,7 @@ footer {
       margin: auto;
       svg {
         display: block;
-        fill: #fff;
+        fill: #1a1a1a;
       }
     }
   }

@@ -47,6 +47,7 @@ div {
   letter-spacing: 0.4px;
   line-height: 1.65;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+	background-image: linear-gradient(to left, #eff8ff 21vw, #ffffff 21vw)
 }
 // ruoter transition
 .page-enter-active,

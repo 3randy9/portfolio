@@ -2,18 +2,41 @@
   <section>
     <div class="tp-main">
       <div>
-        <h1 class="shadow-md">Ryo Ofusa's
+        <h1>Ryo Ofusa's
           <br>Portfolio
           <br>Site
         </h1>
-        <p>I'm Web Developer, Markup and Frontend.</p>
+        <transition name="fade">
+          <p v-show="lazyViewHandler">I'm Web Developer, Markup and Frontend Engineer.</p>
+        </transition>
       </div>
+      <ul class="text-sm">
+        <li>
+          <nuxt-link to="/about" class="shadow text-black">About</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact" class="shadow text-black">Contact</nuxt-link>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      lazyView: true
+    }
+  },
+  methods: {
+    lazyViewHandler: () => {
+      window.addEventListener('load', e => {
+        console.log('test')
+        setTimeout((this.data.lazyView = true), 1500)
+      })
+    }
+  },
   components: {}
 }
 </script>
@@ -31,22 +54,63 @@ section {
   .tp-main {
     width: 100vw;
     max-width: 980px;
-		min-height: 100vh;
+    min-height: 100vh;
     margin: auto;
     padding-top: 81px;
     div {
       display: flex;
-			align-items: center;
+      align-items: center;
       justify-content: space-between;
-			flex-wrap: wrap;
+      flex-wrap: wrap;
     }
+    ul {
+      display: flex;
+      align-items: center;
+      // justify-content: flex-start;
+      flex-wrap: wrap;
+			min-height: 52vh;
+			padding-left: 0;
+      list-style: none;
+      li {
+        width: calc(100% / 2 - 126px);
+        margin: auto 0;
+				border: 1px solid #e5e5e5;
+				&:last-of-type {
+					margin-left: 50px;
+				}
+      }
+      a {
+        display: block;
+				padding: 32px 16px;
+				background-color:#ffffff;
+        text-align: center;
+        text-decoration: none;
+				&:hover,
+				&:focus, {
+					color: #fff;
+					background-color: rgba(10, 10, 10, 0.8);
+					transition: 0.3s;
+				}
+      }
+    }
+  }
+  .fade-enter {
+    opacity: 0;
+  }
+  .fade-leave-active {
+    opacity: 0;
   }
   h1 {
     margin-top: 30px;
     padding: 16px 24px;
-    // color: #fff;
-    // background-color: #22282f;
+    border-left: 1px solid #22282f;
     font-size: 3rem;
+  }
+  p {
+    width: calc(100% / 2 - 20px);
+    margin: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #22282f;
   }
 }
 </style>

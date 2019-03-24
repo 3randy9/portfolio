@@ -1,18 +1,29 @@
 <template>
   <header>
-    <nav class="flex items-center justify-between flex-wrap bg-black p-6">
-      <div class="flex items-center flex-no-shrink text-white mr-6">
+    <nav class="flex items-center justify-end flex-wrap p-4">
+      <!-- <div class="flex items-center flex-no-shrink mr-6">
         <nuxt-link class="font-semibold text-xl tracking-tight logo" to="/">randy39</nuxt-link>
-      </div>
+      </div>-->
       <div class="block">
         <button
-          class="flex items-center px-3 py-2 border rounded text-grey-dark border-grey-dark hover:text-white hover:border-white"
+          class="st-menu px-3 py-2"
           @click="drawer = !drawer"
           tabindex="0"
+          :aria-expanded="drawer"
         >
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          <svg class="menu" ontouchstart width="30px" height="30px" viewBox="0 0 500 500">
+            <path
+              class="border1 border"
+              d="M44.6,151.6h409.9c18.9,0,34.2-15.2,34.2-34.1c0-18.8-15.3-34-34.2-34H44.6c-18.8,0-34.1,15.2-34.1,34 C10.4,136.4,25.7,151.6,44.6,151.6z"
+            ></path>
+            <path
+              class="border2 border"
+              d="M454.5,219.9H44.5c-18.8,0-34.1,15.3-34.1,34.1c0,18.9,15.3,34.2,34.1,34.2h409.9c18.9,0,34.2-15.3,34.2-34.2 C488.7,235.2,473.3,219.9,454.5,219.9z"
+            ></path>
+            <path
+              class="border3 border"
+              d="M454.5,356.7H44.5c-18.8,0-34.1,15.2-34.1,34.1c0,18.8,15.3,34.1,34.1,34.1h409.9c18.9,0,34.2-15.3,34.2-34.1 S473.3,356.7,454.5,356.7z"
+            ></path>
           </svg>
         </button>
       </div>
@@ -23,28 +34,15 @@
         >
           <ul class="text-sm lg:flex-grow modal-container">
             <li @click="drawer = !drawer">
-              <nuxt-link to="/" class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4">Home</nuxt-link>
+              <nuxt-link to="/" class="block mt-4 lg:mt-0 hover:text-grey-dark mr-4">Home</nuxt-link>
             </li>
             <li @click="drawer = !drawer">
-              <nuxt-link
-                to="/about"
-                class="block mt-4 lg:mt-0 text-grey-dark hover:text-white mr-4"
-              >About</nuxt-link>
+              <nuxt-link to="/about" class="block mt-4 lg:mt-0 hover:text-grey-dark mr-4">About</nuxt-link>
             </li>
             <li @click="drawer = !drawer">
-              <nuxt-link
-                to="/contact"
-                class="block mt-4 lg:mt-0 text-grey-dark hover:text-white"
-              >Contact</nuxt-link>
+              <nuxt-link to="/contact" class="block mt-4 lg:mt-0 hover:text-grey-dark">Contact</nuxt-link>
             </li>
           </ul>
-          <button class="hd-closeModal p-6" @click="drawer = !drawer">
-            <svg class="svg-icon" viewBox="0 0 20 20">
-              <path
-                d="M10.185,1.417c-4.741,0-8.583,3.842-8.583,8.583c0,4.74,3.842,8.582,8.583,8.582S18.768,14.74,18.768,10C18.768,5.259,14.926,1.417,10.185,1.417 M10.185,17.68c-4.235,0-7.679-3.445-7.679-7.68c0-4.235,3.444-7.679,7.679-7.679S17.864,5.765,17.864,10C17.864,14.234,14.42,17.68,10.185,17.68 M10.824,10l2.842-2.844c0.178-0.176,0.178-0.46,0-0.637c-0.177-0.178-0.461-0.178-0.637,0l-2.844,2.841L7.341,6.52c-0.176-0.178-0.46-0.178-0.637,0c-0.178,0.176-0.178,0.461,0,0.637L9.546,10l-2.841,2.844c-0.178,0.176-0.178,0.461,0,0.637c0.178,0.178,0.459,0.178,0.637,0l2.844-2.841l2.844,2.841c0.178,0.178,0.459,0.178,0.637,0c0.178-0.176,0.178-0.461,0-0.637L10.824,10z"
-              ></path>
-            </svg>
-          </button>
         </div>
       </transition>
     </nav>
@@ -61,14 +59,39 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
+	max-width: 1300px;
+	margin: auto;
   z-index: 10;
   .logo {
-    color: #fff;
+    // color: #fff;
     letter-spacing: 1px;
     text-decoration: none;
+  }
+  .st-menu {
+    .border {
+      fill: rgb(26, 26, 26);
+      transition: 0.3s all ease;
+      transform-origin: 250px 250px;
+    }
+    &[aria-expanded='true'] {
+      position: relative;
+      z-index: 9999;
+      .border {
+        fill: rgb(26, 26, 26);
+      }
+      .border1 {
+        transform: translate(-102px, 102px) rotate(45deg);
+      }
+      .border2 {
+        opacity: 0;
+      }
+      .border3 {
+        transform: translate(-102px, -102px) rotate(-45deg);
+      }
+    }
   }
   nav {
     text-align: right;
@@ -88,18 +111,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255,255,255,0.95);
     transition: opacity 0.3s ease;
-  }
-  .hd-closeModal {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    svg {
-      width: 38px;
-      height: 38px;
-      fill: #fff;
-    }
   }
   .modal-container {
     transition: all 0.3s ease;
@@ -132,7 +145,7 @@ header {
       a {
         margin: 0;
         padding: 20px 0;
-        color: #fff;
+        color: #1a1a1a;
         text-decoration: none;
       }
     }
