@@ -7,7 +7,7 @@
           <br>Site
         </h1>
         <transition name="fade">
-          <p v-show="lazyViewHandler">I'm Web Developer, Markup and Frontend Engineer.</p>
+          <p class="js-lazyText">I'm Web Developer, Markup and Frontend Engineer.</p>
         </transition>
       </div>
       <ul class="text-sm">
@@ -23,19 +23,31 @@
 </template>
 
 <script>
+window.addEventListener('load', () => {
+	const target = document.querySelector('.js-lazyText');
+	target.style.opacity = 0;
+  setTimeout(() => {
+		target.classList.add('active');
+		target.style.opacity = 1;
+  }, 1500)
+})
+
 export default {
   data() {
     return {
-      lazyView: true
+      lazyView: false
     }
   },
   methods: {
-    lazyViewHandler: () => {
-      window.addEventListener('load', e => {
-        console.log('test')
-        setTimeout((this.data.lazyView = true), 1500)
-      })
-    }
+    // lazyViewHandler: () => {
+    //   window.addEventListener('load', () => {
+    //     setTimeout(() => {
+    //       // lazyView.classList.add('fade-leave');
+    //       this.lazyView = true
+    //       console.log('tests')
+    //     }, 1500)
+    //   })
+    // }
   },
   components: {}
 }
@@ -68,29 +80,29 @@ section {
       align-items: center;
       // justify-content: flex-start;
       flex-wrap: wrap;
-			min-height: 52vh;
-			padding-left: 0;
+      min-height: 52vh;
+      padding-left: 0;
       list-style: none;
       li {
         width: calc(100% / 2 - 126px);
         margin: auto 0;
-				border: 1px solid #e5e5e5;
-				&:last-of-type {
-					margin-left: 50px;
-				}
+        border: 1px solid #e5e5e5;
+        &:last-of-type {
+          margin-left: 50px;
+        }
       }
       a {
         display: block;
-				padding: 32px 16px;
-				background-color:#ffffff;
+        padding: 32px 16px;
+        background-color: #ffffff;
         text-align: center;
         text-decoration: none;
-				&:hover,
-				&:focus, {
-					color: #fff;
-					background-color: rgba(10, 10, 10, 0.8);
-					transition: 0.3s;
-				}
+        &:hover,
+        &:focus {
+          color: #fff;
+          background-color: rgba(10, 10, 10, 0.8);
+          transition: 0.3s;
+        }
       }
     }
   }
@@ -111,6 +123,11 @@ section {
     margin: auto;
     padding-bottom: 20px;
     border-bottom: 1px solid #22282f;
+  }
+  .js-lazyText.active {
+  	opacity: 1;
+		transition: all 0.9s ease;
+		transform: translateY(50%);
   }
 }
 </style>
