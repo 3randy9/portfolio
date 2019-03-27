@@ -132,8 +132,5 @@ section {
     transition: all 0.9s ease;
     transform: translateY(50%);
   }
-  [v-cloak] {
-    display: none;
-  }
 }
 </style>
