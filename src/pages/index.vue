@@ -24,13 +24,15 @@
 
 <script>
 window.addEventListener('load', () => {
-	const target = document.querySelector('.js-lazyText');
-	target.style.opacity = 0;
+	const target = document.querySelector('.js-lazyText')
+  target.style.opacity = 0
   setTimeout(() => {
-		target.classList.add('active');
-		target.style.opacity = 1;
+    target.classList.add('active')
+    target.style.opacity = 1
   }, 1500)
-})
+});
+
+// target.style.opacity = 1
 
 export default {
   data() {
@@ -120,14 +122,18 @@ section {
   }
   p {
     width: calc(100% / 2 - 20px);
-    margin: auto;
+    margin: auto auto 48px;
     padding-bottom: 20px;
     border-bottom: 1px solid #22282f;
   }
   .js-lazyText.active {
-  	opacity: 1;
-		transition: all 0.9s ease;
-		transform: translateY(50%);
+    margin: auto;
+    opacity: 1;
+    transition: all 0.9s ease;
+    transform: translateY(50%);
+  }
+  [v-cloak] {
+    display: none;
   }
 }
 </style>
