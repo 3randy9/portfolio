@@ -1,26 +1,15 @@
 <template>
   <section>
     <div class="container">
-      <h1>This contact</h1>
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name:
-            <input type="text" name="name">
-          </label>
-        </p>
-        <p>
-          <label>Your Email:
-            <input type="email" name="email">
-          </label>
-        </p>
-        <p>
-          <label>Message:
-            <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+      <h1>Contact</h1>
+      <form name="contact" method="POST" data-netlify="true" netlify>
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email">
+        <label for="message">Message:</label>
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Send</button>
       </form>
     </div>
   </section>
