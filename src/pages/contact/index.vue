@@ -2,7 +2,8 @@
   <section>
     <div class="container">
       <h1>Contact</h1>
-      <form name="contact" method="POST" netlify>
+      <form name="contact" method="POST" data-netlify="true" netlify>
+				<input type="hidden" name="form-name" value="contact">
         <label for="name">Your Name:</label>
         <input type="text" name="name" id="name">
         <label for="email">Your Email:</label>
