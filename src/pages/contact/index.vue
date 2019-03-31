@@ -2,23 +2,18 @@
   <section>
     <div class="container">
       <h1>Contact</h1>
-      <form name="contact" method="post" data-netlify="true" action="thank-you">
-				<input type="hidden" name="form-name" value="contact">
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name">
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" id="email">
-        <label for="message">Message:</label>
-        <textarea name="message" id="message"></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <the-form/>
     </div>
   </section>
 </template>
 
 <script>
+import TheForm from '~/components/TheForm'
+
 export default {
-  components: {}
+  components: {
+    TheForm
+  }
 }
 </script>
 
@@ -28,8 +23,21 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+section {
+  .container {
+		width: 100vw;
+    max-width: 980px;
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 81px;
+		@media screen and (max-width: 767px){
+			padding: 81px 20px 0;
+		}
+  }
+  h1 {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #22282f;
+  }
 }
 </style>
