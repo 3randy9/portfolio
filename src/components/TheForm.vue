@@ -15,7 +15,6 @@
       @submit="checkForm"
       novalidate="true"
     >
-      <input type="hidden" name="form-name" value="contact">
       <dl>
         <dt>
           <label for="name" class="text-grey-darker">Your Name</label>
