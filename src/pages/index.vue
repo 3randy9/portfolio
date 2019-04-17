@@ -26,16 +26,6 @@
 </template>
 
 <script>
-window.addEventListener('load', () => {
-  const target = document.querySelector('.js-lazyText')
-  target.style.opacity = 0
-  setTimeout(() => {
-    target.classList.add('active')
-    target.style.opacity = 1
-  }, 1500)
-})
-
-// target.style.opacity = 1
 
 export default {
   data() {
@@ -44,15 +34,15 @@ export default {
     }
   },
   methods: {
-    // lazyViewHandler: () => {
-    //   window.addEventListener('load', () => {
-    //     setTimeout(() => {
-    //       // lazyView.classList.add('fade-leave');
-    //       this.lazyView = true
-    //       console.log('tests')
-    //     }, 1500)
-    //   })
-    // }
+    lazyViewHandler: () => {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          // lazyView.classList.add('fade-leave');
+          this.lazyView = true
+          console.log('tests')
+        }, 1500)
+      })
+    }
   },
   components: {}
 }
@@ -87,29 +77,29 @@ section {
       min-height: 52vh;
       padding-left: 0;
       list-style: none;
-			@media screen and (max-width: 767px) {
-				min-height: 40vh;
-				padding: 20px;
-			}
+      @media screen and (max-width: 767px) {
+        min-height: 40vh;
+        padding: 20px;
+      }
       li {
         position: relative;
         width: calc(100% / 2 - 126px);
         margin: auto 0;
         // padding: 32px 16px;
-				background-color: #fff;
+        background-color: #fff;
         border: 1px solid #e5e5e5;
         overflow: hidden;
         text-align: center;
         @media screen and (max-width: 767px) {
-					width: 100%;
+          width: 100%;
           max-width: 362px;
-					margin: auto;
+          margin: auto;
         }
         &:last-of-type {
-					margin-left: 50px;
-					@media screen and (max-width: 767px) {
-						margin-left: auto;
-					}
+          margin-left: 50px;
+          @media screen and (max-width: 767px) {
+            margin-left: auto;
+          }
         }
         .effect {
           position: absolute;
@@ -137,9 +127,9 @@ section {
         text-align: center;
         text-decoration: none;
         transition: all 0.5s ease;
-				@media screen and (max-width: 767px) {
-					padding: 24px;
-				}
+        @media screen and (max-width: 767px) {
+          padding: 24px;
+        }
       }
     }
   }
@@ -154,31 +144,31 @@ section {
     padding: 16px 24px;
     border-left: 1px solid #22282f;
     font-size: 3rem;
-		@media screen and (max-width: 767px) {
-			margin: 0 0 20px 20px;
-			padding-top: 0;
-			font-size: 2rem;
-		}
+    @media screen and (max-width: 767px) {
+      margin: 0 0 20px 20px;
+      padding-top: 0;
+      font-size: 2rem;
+    }
   }
   p {
     width: calc(100% / 2 - 20px);
     margin: auto auto 48px;
     padding-bottom: 20px;
     border-bottom: 1px solid #22282f;
-		@media screen and (max-width: 767px) {
-			width: 100%;
-			max-width: 89%;
-			margin: auto;
-		}
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      max-width: 89%;
+      margin: auto;
+    }
   }
   .js-lazyText.active {
     margin: auto;
     opacity: 1;
     transition: all 0.9s ease;
     transform: translateY(50%);
-		@media screen and (max-width: 767px) {
-			transform: translateY(0);
-		}
+    @media screen and (max-width: 767px) {
+      transform: translateY(0);
+    }
   }
 }
 </style>

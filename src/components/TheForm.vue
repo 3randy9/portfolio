@@ -1,7 +1,7 @@
 <template>
   <div>
     <p v-if="errors.length" class="text-red-light text-base">
-    <b>以下の入力内容をご確認ください</b>
+    <strong>以下の入力内容をご確認ください</strong>
     <ul>
       <li :key="error" v-for="error in errors">{{ error }}</li>
     </ul>

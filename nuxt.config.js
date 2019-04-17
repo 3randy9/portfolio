@@ -1,8 +1,8 @@
-const pkg = require('./package')
+import pkg from './package'
 const baseDir = process.env.BASE_DIR || '/'
 
-module.exports = {
-	mode: 'spa',
+export default {
+	mode: 'universal',
 	srcDir: 'src/',
 	router: {
 		base: baseDir
@@ -75,10 +75,21 @@ module.exports = {
 			font: () => '[path][name].[ext]',
 			video: () => '[path][name].[ext]'
 		},
+		postcss: {
+      plugins: {
+        'postcss-preset-env': {
+          autoprefixer: { grid: true }
+        },
+      },
+    },
 		/*
     ** You can extend webpack config here
     */
-		extend(config, ctx) {}
+		extend (config, { isClient }) {
+			if (isClient) {
+				config.devtool = '#source-map'
+			}
+		}
 	},
 	/*
   ** PWA settings
