@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <p v-if="errors.length" class="text-red-light text-base">
     <strong>以下の入力内容をご確認ください</strong>
     <ul>
@@ -64,10 +64,10 @@
       </dl>
       <button
         type="submit"
-        class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded"
+        class="bg-blue hover:bg-blue-light text-white font-bold py-6 border-b-4 border-blue-dark hover:border-blue rounded"
       >Send</button>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -110,6 +110,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+	p,
+	li {
+		font-size: 1.6rem;
+	}
+}
 form {
   width: 100%;
   @media screen and (max-width: 767px) {
@@ -119,9 +125,8 @@ form {
   input,
   textarea {
     margin-top: 10px;
-    // border: 1px solid #b8c2cc;
     background-color: #f8fafc;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
   input {

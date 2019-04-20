@@ -27,7 +27,7 @@ section {
   .container {
 		width: 100vw;
     max-width: 980px;
-    min-height: 100vh;
+    min-height: 89.9vh;
     margin: auto;
     padding-top: 81px;
 		@media screen and (max-width: 767px){
@@ -38,6 +38,10 @@ section {
     margin-bottom: 20px;
     padding-bottom: 16px;
     border-bottom: 1px solid #22282f;
+		font-size: 4rem;
+		@media screen and (max-width: 767px) {
+      font-size: 3rem;
+    }
   }
 }
 </style>

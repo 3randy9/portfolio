@@ -1,7 +1,18 @@
-<template lang="pug">
-	section
-		.container
-			h1 This about
+<template>
+  <section>
+    <div class="container">
+      <h1>About</h1>
+      <div class="w-3/5">
+				<h2>Skill</h2>
+        <div class="shadow w-full bg-grey-light rounded-lg">
+          <div
+            class="bg-blue text-xs leading-none py-1 text-center text-white rounded-lg"
+            style="width: 45%"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -17,14 +28,21 @@ export default {
 }
 */
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	text-align: center;
-	a {
-		width: calc(50% / 3 - 20px)
+  width: 100vw;
+	max-width: 980px;
+	min-height: 100vh;
+	margin: auto;
+	padding-top: 81px;
+	@media screen and (max-width: 767px){
+		padding: 81px 20px 0;
 	}
+	.shadow div {
+		height: 20px;
+	}
+	h1 {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #22282f;
+  }
 }
 </style>

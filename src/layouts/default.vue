@@ -1,11 +1,11 @@
 <template>
-	<div>
-		<the-header/>
-		<main>
-			<nuxt/>
-		</main>
-		<the-footer/>
-	</div>
+  <div class="wrap">
+    <the-header/>
+    <main>
+      <nuxt/>
+    </main>
+    <the-footer/>
+  </div>
 </template>
 
 <script>
@@ -20,26 +20,26 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  img {
-    vertical-align: bottom;
-  }
 }
-div {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+img {
+  vertical-align: bottom;
+}
+.wrap {
   position: relative;
   color: #1a1a1a;
   font-size: 1.6rem;
@@ -47,7 +47,7 @@ div {
   letter-spacing: 0.4px;
   line-height: 1.65;
   font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-	background-image: linear-gradient(to left, #eff8ff 21vw, #ffffff 21vw)
+  background-image: linear-gradient(to left, #eff8ff 20vw, #ffffff 20vw);
 }
 // ruoter transition
 .page-enter-active,

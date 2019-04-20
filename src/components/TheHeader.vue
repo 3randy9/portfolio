@@ -146,6 +146,7 @@ header {
         margin: 0;
         padding: 20px 0;
         color: #1a1a1a;
+				font-size: 1.4rem;
         text-decoration: none;
       }
     }
