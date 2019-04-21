@@ -1,9 +1,9 @@
 <template>
   <section>
     <div class="container">
-      <h1>About</h1>
+      <h2>About</h2>
       <div class="w-3/5">
-				<h2>Skill</h2>
+				<h3>Skill</h3>
         <div class="shadow w-full bg-grey-light rounded-lg">
           <div
             class="bg-blue text-xs leading-none py-1 text-center text-white rounded-lg"
@@ -16,9 +16,9 @@
 </template>
 
 <script>
-export default {
-  components: {}
-}
+// export default {
+//   components: {}
+// }
 </script>
 
 <style lang="scss" scoped>
@@ -28,21 +28,25 @@ export default {
 }
 */
 .container {
-  width: 100vw;
+	width: 100vw;
 	max-width: 980px;
 	min-height: 100vh;
 	margin: auto;
 	padding-top: 81px;
-	@media screen and (max-width: 767px){
+	@media screen and (max-width: 767px) {
 		padding: 81px 20px 0;
 	}
 	.shadow div {
 		height: 20px;
 	}
-	h1 {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #22282f;
-  }
+	h2 {
+		margin-bottom: 20px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #22282f;
+		font-size: 4rem;
+		@media screen and (max-width: 767px) {
+			font-size: 3rem;
+		}
+	}
 }
 </style>

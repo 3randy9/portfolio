@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class="container">
-      <h1>Contact</h1>
-      <the-form/>
+      <h2>Contact</h2>
+      <the-form />
     </div>
   </section>
 </template>
@@ -11,9 +11,9 @@
 import TheForm from '~/components/TheForm'
 
 export default {
-  components: {
-    TheForm
-  }
+	components: {
+		TheForm
+	}
 }
 </script>
 
@@ -24,24 +24,24 @@ export default {
 }
 */
 section {
-  .container {
+	.container {
 		width: 100vw;
-    max-width: 980px;
-    min-height: 89.9vh;
-    margin: auto;
-    padding-top: 81px;
-		@media screen and (max-width: 767px){
+		max-width: 980px;
+		min-height: 89.9vh;
+		margin: auto;
+		padding-top: 81px;
+		@media screen and (max-width: 767px) {
 			padding: 81px 20px 0;
 		}
-  }
-  h1 {
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #22282f;
+	}
+	h2 {
+		margin-bottom: 20px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #22282f;
 		font-size: 4rem;
 		@media screen and (max-width: 767px) {
-      font-size: 3rem;
-    }
-  }
+			font-size: 3rem;
+		}
+	}
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="wrap">
-    <the-header/>
+    <the-header />
     <main>
-      <nuxt/>
+      <nuxt />
     </main>
-    <the-footer/>
+    <the-footer />
   </div>
 </template>
 
@@ -13,49 +13,49 @@ import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
 export default {
-  components: {
-    TheHeader,
-    TheFooter
-  }
+	components: {
+		TheHeader,
+		TheFooter
+	}
 }
 </script>
 
 <style lang="scss">
 html {
-  font-size: 62.5%;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+	font-size: 62.5%;
+	word-spacing: 1px;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
 }
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  margin: 0;
+	box-sizing: border-box;
+	margin: 0;
 }
 img {
-  vertical-align: bottom;
+	vertical-align: bottom;
 }
 .wrap {
-  position: relative;
-  color: #1a1a1a;
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.4px;
-  line-height: 1.65;
-  font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  background-image: linear-gradient(to left, #eff8ff 20vw, #ffffff 20vw);
+	position: relative;
+	color: #1a1a1a;
+	font-size: 1.6rem;
+	font-weight: 400;
+	letter-spacing: 0.4px;
+	line-height: 1.65;
+	font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+	background-image: linear-gradient(to left, #eff8ff 20vw, #ffffff 20vw);
 }
 // ruoter transition
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s;
+	transition: opacity 0.5s;
 }
 .page-enter,
 .page-leave-active {
-  opacity: 0;
+	opacity: 0;
 }
 </style>

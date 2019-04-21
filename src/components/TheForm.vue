@@ -1,19 +1,21 @@
 <template>
   <section>
     <p v-if="errors.length" class="text-red-light text-base">
-    <strong>以下の入力内容をご確認ください</strong>
-    <ul>
-      <li :key="error" v-for="error in errors">{{ error }}</li>
-    </ul>
+      <strong>以下の入力内容をご確認ください</strong>
+      <ul>
+        <li v-for="error in errors" :key="error">
+          {{ error }}
+        </li>
+      </ul>
     </p>
     <form
       name="contact"
       method="post"
-			data-netlify="true"
-			data-netlify-honeypot="bot-field"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       action="/contact/thanks"
-      @submit="checkForm"
       novalidate="true"
+      @submit="checkForm"
     >
       <dl>
         <dt>
@@ -21,12 +23,12 @@
         </dt>
         <dd>
           <input
+            id="name"
+            v-model="name"
             type="text"
             name="name"
-            v-model="name"
             required="true"
             aria-required="true"
-            id="name"
             class="appearance-none border-2 border-grey-light rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey"
           >
         </dd>
@@ -37,12 +39,12 @@
         </dt>
         <dd>
           <input
+            id="email"
+            v-model="email"
             type="email"
             name="email"
-            v-model="email"
             required="true"
             aria-required="true"
-            id="email"
             class="appearance-none border-2 border-grey-light rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey"
           >
         </dd>
@@ -53,19 +55,21 @@
         </dt>
         <dd>
           <textarea
-            name="message"
+            id="message"
             v-model="message"
+            name="message"
             required="true"
             aria-required="true"
-            id="message"
             class="appearance-none border-2 border-grey-light rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-grey"
-          ></textarea>
+          />
         </dd>
       </dl>
       <button
         type="submit"
         class="bg-blue hover:bg-blue-light text-white font-bold py-6 border-b-4 border-blue-dark hover:border-blue rounded"
-      >Send</button>
+      >
+        Send
+      </button>
     </form>
   </section>
 </template>
@@ -102,7 +106,7 @@ export default {
       e.preventDefault()
     },
     validEmail: function(email) {
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(email)
     }
   }

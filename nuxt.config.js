@@ -1,4 +1,3 @@
-import pkg from './package'
 const baseDir = process.env.BASE_DIR || '/'
 
 export default {
@@ -11,8 +10,8 @@ export default {
 		fallback: true
 	},
 	/*
-  ** Headers of the page
-  */
+	 ** Headers of the page
+	 */
 	head: {
 		htmlAttrs: {
 			lang: 'ja'
@@ -23,8 +22,8 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: 'randy39 Portfolio' }
 		],
-		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{
 				href:
 					'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans:400,700',
@@ -34,38 +33,38 @@ export default {
 	},
 
 	/*
-  ** Customize the progress-bar color
-  */
+	 ** Customize the progress-bar color
+	 */
 	loading: { color: '#000' },
 
 	/*
-  ** Global CSS
-  */
+	 ** Global CSS
+	 */
 	css: ['~/assets/css/tailwind.css', 'modern-normalize'],
 
 	/*
-  ** Plugins to load before mounting the App
-  */
+	 ** Plugins to load before mounting the App
+	 */
 	plugins: [],
 
 	/*
-  ** Nuxt.js modules
-  */
+	 ** Nuxt.js modules
+	 */
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
 		'@nuxtjs/axios',
 		'@nuxtjs/pwa'
 	],
 	/*
-  ** Axios module configuration
-  */
+	 ** Axios module configuration
+	 */
 	axios: {
 		// See https://github.com/nuxt-community/axios-module#options
 	},
 
 	/*
-  ** Build configuration
-  */
+	 ** Build configuration
+	 */
 	build: {
 		filenames: {
 			app: () => '[name].js',
@@ -76,24 +75,41 @@ export default {
 			video: () => '[path][name].[ext]'
 		},
 		postcss: {
-      plugins: {
-        'postcss-preset-env': {
-          autoprefixer: { grid: true }
-        },
-      },
-    },
+			plugins: {
+				// `postcss-url` の無効化
+				'postcss-url': false,
+				// plugin の追加
+				'postcss-nested': {},
+				'postcss-responsive-type': {},
+				'postcss-hexrgba': {}
+			},
+			preset: {
+				autoprefixer: {
+					grid: true
+				}
+			}
+		},
 		/*
-    ** You can extend webpack config here
-    */
-		extend (config, { isClient }) {
-			if (isClient) {
+		 ** You can extend webpack config here
+		 */
+		extend(config, ctx) {
+			if (ctx.isClient) {
 				config.devtool = '#source-map'
+			}
+			// Run ESLint on save
+			if (ctx.isDev && ctx.isClient) {
+				config.module.rules.push({
+					enforce: 'pre',
+					test: /\.(js|vue)$/,
+					loader: 'eslint-loader',
+					exclude: /(node_modules)/
+				})
 			}
 		}
 	},
 	/*
-  ** PWA settings
-  */
+	 ** PWA settings
+	 */
 	manifest: {
 		// manifestの設定
 		lang: 'ja',
