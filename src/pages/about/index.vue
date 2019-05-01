@@ -1,32 +1,32 @@
 <template>
-  <section>
-    <div class="container">
-      <h2>About</h2>
-      <div class="w-3/5">
+	<section>
+		<div class="container">
+			<h2>About</h2>
+			<div class="w-3/5">
 				<h3>Skill</h3>
-        <div class="shadow w-full bg-grey-light rounded-lg">
-          <div
-            class="bg-blue text-xs leading-none py-1 text-center text-white rounded-lg"
-            style="width: 45%"
-          ></div>
-        </div>
-      </div>
-    </div>
-  </section>
+				<div class="shadow w-full bg-grey-light rounded-lg">
+					<div
+						class="bg-blue text-xs leading-none py-1 text-center text-white rounded-lg"
+						style="width: 45%"
+					></div>
+				</div>
+			</div>
+		</div>
+	</section>
 </template>
 
 <script>
-// export default {
-//   components: {}
-// }
+export default {
+	components: {}
+}
 </script>
 
 <style lang="scss" scoped>
 /* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
+	.container {
+	@apply min-h-screen flex justify-center items-center text-center mx-auto;
+	}
+	*/
 .container {
 	width: 100vw;
 	max-width: 980px;

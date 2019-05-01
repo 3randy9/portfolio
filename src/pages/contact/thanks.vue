@@ -1,10 +1,10 @@
 <template>
-  <section>
-    <h2 class="visually-hidden">
+	<section>
+		<h2 class="visually-hidden">
 			thanks page
 		</h2>
-    <p>Thank you for Contact!<br >ご返信まで今しばらくお待ち下さい</p>
-  </section>
+		<p>Thank you for Contact!<br />ご返信まで今しばらくお待ち下さい</p>
+	</section>
 </template>
 
 <style lang="scss" scoped>

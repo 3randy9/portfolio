@@ -1,10 +1,10 @@
 <template>
-  <section>
-    <div class="container">
-      <h2>Contact</h2>
-      <the-form />
-    </div>
-  </section>
+	<section>
+		<div class="container">
+			<h2>Contact</h2>
+			<the-form />
+		</div>
+	</section>
 </template>
 
 <script>

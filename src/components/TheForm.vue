@@ -76,40 +76,39 @@
 
 <script>
 export default {
-  data() {
-    return {
-      errors: [],
-      name: null,
-      email: null,
-      message: null
-    }
-  },
-  methods: {
-    checkForm: function(e) {
-      this.errors = []
+	data() {
+		return {
+			errors: [],
+			name: null,
+			email: null,
+			message: null
+		}
+	},
+	methods: {
+		checkForm(e) {
+			this.errors = []
 
-      if (!this.name) {
-        this.errors.push('名前を入力してください')
-      }
-      if (!this.email) {
-        this.errors.push('メールアドレスを入力してください')
-      } else if (!this.validEmail(this.email)) {
-        this.errors.push('メールアドレスが正しくありません')
-      }
-      if (!this.message) {
-        this.errors.push('メッセージを入力してください')
-      }
-
-      if (!this.errors.length) {
-        return true
-      }
-      e.preventDefault()
-    },
-    validEmail: function(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return re.test(email)
-    }
-  }
+			if (!this.name) {
+				this.errors.push('名前を入力してください')
+			}
+			if (!this.email) {
+				this.errors.push('メールアドレスを入力してください')
+			} else if (!this.validEmail(this.email)) {
+				this.errors.push('メールアドレスが正しくありません')
+			}
+			if (!this.message) {
+				this.errors.push('メッセージを入力してください')
+			}
+			if (!this.errors.length) {
+				return true
+			}
+			e.preventDefault()
+		},
+		validEmail(email) {
+			const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			return re.test(email)
+		}
+	}
 }
 </script>
 
@@ -121,35 +120,35 @@ section {
 	}
 }
 form {
-  width: 100%;
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    margin: auto;
-  }
-  input,
-  textarea {
-    margin-top: 10px;
-    background-color: #f8fafc;
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-  input {
-    width: 100%;
-    max-width: 250px;
-  }
-  textarea {
-    width: 100%;
-    max-width: 784px;
-    min-height: 150px;
-  }
-  button {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 26px auto 0;
-  }
-  dl + dl {
-    margin-top: 30px;
-  }
+	width: 100%;
+	@media screen and (max-width: 767px) {
+		width: 100%;
+		margin: auto;
+	}
+	input,
+	textarea {
+		margin-top: 10px;
+		background-color: #f8fafc;
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+	input {
+		width: 100%;
+		max-width: 250px;
+	}
+	textarea {
+		width: 100%;
+		max-width: 784px;
+		min-height: 150px;
+	}
+	button {
+		display: block;
+		width: 100%;
+		max-width: 250px;
+		margin: 26px auto 0;
+	}
+	dl + dl {
+		margin-top: 30px;
+	}
 }
 </style>

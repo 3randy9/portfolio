@@ -1,11 +1,11 @@
 <template>
-  <div class="wrap">
-    <the-header />
-    <main>
-      <nuxt />
-    </main>
-    <the-footer />
-  </div>
+	<div class="wrap">
+		<the-header />
+		<main>
+			<nuxt />
+		</main>
+		<the-footer />
+	</div>
 </template>
 
 <script>
