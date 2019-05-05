@@ -7,7 +7,7 @@
 				<div class="shadow w-full bg-grey-light rounded-lg">
 					<div
 						class="bg-blue text-xs leading-none py-1 text-center text-white rounded-lg"
-						style="width: 45%"
+						style="width: 45%;"
 					></div>
 				</div>
 			</div>

@@ -95,10 +95,10 @@ header {
 	.st-menu {
 		.border {
 			fill: rgb(26, 26, 26);
-			transition: 0.3s all ease;
+			transition: .3s all ease;
 			transform-origin: 250px 250px;
 		}
-		&[aria-expanded='true'] {
+		&[aria-expanded="true"] {
 			position: relative;
 			z-index: 9999;
 			.border {
@@ -133,11 +133,11 @@ header {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(255, 255, 255, 0.95);
-		transition: opacity 0.3s ease;
+		background-color: rgba(255, 255, 255, .95);
+		transition: opacity .3s ease;
 	}
 	.modal-container {
-		transition: all 0.3s ease;
+		transition: all .3s ease;
 	}
 	.modal-enter {
 		opacity: 0;
@@ -147,8 +147,7 @@ header {
 	}
 	.modal-enter .modal-container,
 	.modal-leave-active .modal-container {
-		transform: scale(1);
-		transform: translate(-50%, 50%);
+		transform: scale(1) translate(-50%, 50%);
 	}
 	ul {
 		position: absolute;

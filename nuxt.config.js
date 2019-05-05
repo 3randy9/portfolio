@@ -1,3 +1,4 @@
+import tailwindJS from './tailwind'
 const baseDir = process.env.BASE_DIR || '/'
 
 export default {
@@ -76,12 +77,8 @@ export default {
 		},
 		postcss: {
 			plugins: {
-				// `postcss-url` の無効化
-				'postcss-url': false,
-				// plugin の追加
-				'postcss-nested': {},
-				'postcss-responsive-type': {},
-				'postcss-hexrgba': {}
+				tailwindcss: { tailwindJS },
+				autoprefixer: {}
 			},
 			preset: {
 				autoprefixer: {
