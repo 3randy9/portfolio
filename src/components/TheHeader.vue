@@ -145,10 +145,6 @@ header {
 	.modal-leave-active {
 		opacity: 0;
 	}
-	.modal-enter .modal-container,
-	.modal-leave-active .modal-container {
-		transform: scale(1) translate(-50%, 50%);
-	}
 	ul {
 		position: absolute;
 		top: 50%;
